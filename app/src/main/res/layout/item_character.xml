@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusable="true"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="4dp"
+    android:clickable="true"
+    android:id="@+id/cv_character"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_background"
+        >
+
+        <ImageView
+            android:id="@+id/iv_character"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/img_goku"
+            tools:src="@drawable/goku_img"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ll_info"
+            app:layout_constraintVertical_chainStyle="packed"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/iv_character"
+            android:padding="8dp"
+            android:background="@color/grayblue">
+
+            <TextView
+                android:id="@+id/tv_label_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                tools:text="Name"/>
+            <TextView
+                android:id="@+id/tv_value_race_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkyellow"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                tools:text="Person"
+                android:layout_marginBottom="4dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_label_ki"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="@string/base_ki"
+                />
+            <TextView
+                android:id="@+id/tv_value_ki"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkyellow"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"
+
+                tools:text="value"/>
+            <TextView
+                android:id="@+id/tv_label_total_ki"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="@string/total_ki"
+                />
+            <TextView
+                android:id="@+id/tv_value_total_ki"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkyellow"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"
+                tools:text="value"
+                />
+            <TextView
+                android:id="@+id/tv_label_affiliation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="@string/affiliation"/>
+            <TextView
+                android:id="@+id/tv_value_affiliation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkyellow"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                tools:text="value"/>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
