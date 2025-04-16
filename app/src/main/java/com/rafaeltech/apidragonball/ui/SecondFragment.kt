@@ -1,26 +1,17 @@
 package com.rafaeltech.apidragonball.ui
 
-import android.content.Intent
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.rafaeltech.apidragonball.R
+import com.bumptech.glide.Glide
 import com.rafaeltech.apidragonball.databinding.FragmentSecondBinding
 import kotlin.getValue
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [androidx.fragment.app.Fragment] subclass.
- * Use the [SecondFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SecondFragment : Fragment() {
     private var _binding: FragmentSecondBinding? = null
 
@@ -35,14 +26,22 @@ class SecondFragment : Fragment() {
     ): View {
 
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        binding.buttonBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
         return binding.root
 
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val character = args.currentCharacter
+        Glide.with(requireContext())
+            .load(character.image)
+            .into(binding.imgSecondFrag)
 
-        binding.textSecondFrag.text = args.currentCharacter.toString()
+        binding.txtSecond.text = character.description ?: "Sem descrição disponível."
     }
 
     override fun onDestroyView() {

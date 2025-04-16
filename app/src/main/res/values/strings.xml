@@ -10,5 +10,8 @@
     <string name="total_ki">Total ki</string>
     <string name="affiliation">Affiliation</string>
     <string name="logo_dragonball">DragonBall logo</string>
+    <string name="img_dragonball">DragonBall characters</string>
+    <string name="label_txt_second">Description</string>
+    <string name="content_button_second">Button back</string>
 
 </resources>
