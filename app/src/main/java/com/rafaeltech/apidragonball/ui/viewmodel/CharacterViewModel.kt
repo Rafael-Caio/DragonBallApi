@@ -27,7 +27,7 @@ class CharacterViewModel(private val repository: CharacterRepository): ViewModel
             isLoading = true
             val response = repository.getCharacterResponse()
             response?.let {
-                // Agora 'it' é do tipo 'CharacterResponse'
+                // O 'it' é do tipo 'CharacterResponse'
                 currentList.addAll(it.results) // Isso deve funcionar se 'results' for uma lista de 'Character'
                 _results.postValue(currentList)
                 nextPageUrl = it.links.next

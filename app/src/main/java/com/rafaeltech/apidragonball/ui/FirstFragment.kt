@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.rafaeltech.apidragonball.data.remote.CharactersApiService
 import com.rafaeltech.apidragonball.data.remote.NetworkConfig
 import com.rafaeltech.apidragonball.databinding.FragmentFirstBinding
@@ -27,6 +28,7 @@ class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
+
 
     private lateinit var adapterMain: CharacterAdapter
 
@@ -52,6 +54,8 @@ class FirstFragment : Fragment() {
         setupRecyclerView()
         observers()
         setListener()
+        //iniciando o shimmer
+        binding.shimmerLayout.startShimmer()
     }
 
     private fun setupRecyclerView() {
@@ -88,6 +92,11 @@ class FirstFragment : Fragment() {
 
     private fun observers() {
         characterViewModel.results.observe(viewLifecycleOwner) { list ->
+            //acutar o shimmer após os dados serem carregados
+            binding.shimmerLayout.stopShimmer()
+            binding.shimmerLayout.visibility = View.GONE
+            binding.rvCharacter.visibility = View.VISIBLE
+            //atualizar lista
             adapterMain.updateCharacters(list)
         }
     }

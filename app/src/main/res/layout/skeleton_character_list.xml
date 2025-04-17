@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <!-- Cada “row” tem 2 cards -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="480dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_skeleton_rounded" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="480dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_skeleton_rounded" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="480dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_skeleton_rounded" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="480dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_skeleton_rounded" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -9,7 +9,7 @@ interface CharactersApiService {
     @GET("characters")
     suspend fun getCharacter(): Response<CharacterResponse>
 
-    // Metodo para pegar personagens por URL
+    // Metodo para pegar personagens por URL ajudando na paginação
     @GET
     suspend fun getCharacterByUrl(@Url url: String): Response<CharacterResponse>
 }

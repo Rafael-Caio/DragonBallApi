@@ -7,6 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".ui.FirstFragment">
 
+    <!-- Shimmer -->
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shimmer_auto_start="true"
+        app:shimmer_duration="1500"
+        app:shimmer_repeat_count="-1"
+        app:shimmer_tilt="20"
+        app:shimmer_dropoff="0.5"
+        app:shimmer_shape="linear">
+
+        <!-- Adicionando meu LinearLayouit aninhado-->
+        <include layout="@layout/skeleton_character_list"/>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_character"
         android:layout_width="0dp"
