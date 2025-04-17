@@ -13,5 +13,6 @@
     <string name="img_dragonball">DragonBall characters</string>
     <string name="label_txt_second">Description</string>
     <string name="content_button_second">Button back</string>
+    <string name="content_button_favorite">Favorite button</string>
 
 </resources>
