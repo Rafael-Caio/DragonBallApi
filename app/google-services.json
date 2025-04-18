@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1018276461469",
+    "project_id": "apidragonball-70484",
+    "storage_bucket": "apidragonball-70484.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018276461469:android:c837e18f242e64faa18d74",
+        "android_client_info": {
+          "package_name": "com.rafaeltech.apidragonball"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTEJX595d9Sa17qQEy3xWFwIn_j8FZStg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

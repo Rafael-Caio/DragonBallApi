@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.ksp)
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.safe.args)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -54,6 +55,8 @@ android {
 }
 
 dependencies {
+    implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
+    implementation("com.google.firebase:firebase-analytics")
 
     implementation("com.facebook.shimmer:shimmer:0.5.0")
 

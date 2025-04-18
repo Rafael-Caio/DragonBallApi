@@ -5,21 +5,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.rafaeltech.apidragonball.R
 import com.rafaeltech.apidragonball.databinding.FragmentSecondBinding
 import kotlin.getValue
 
 class SecondFragment : Fragment() {
     private var _binding: FragmentSecondBinding? = null
+    private var buttonActivate = false
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
     private val args: SecondFragmentArgs by navArgs()
 
+    @SuppressLint("ResourceType")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,6 +33,19 @@ class SecondFragment : Fragment() {
         binding.buttonBack.setOnClickListener {
             findNavController().navigateUp()
         }
+
+        val btnActivate = view?.findViewById<ImageButton>(R.drawable.activate)
+        val btnNoActivate = view?.findViewById<ImageButton>(R.drawable.noactivate)
+        // Ação de clique no botão de favorito
+        binding.favoriteButton.setOnClickListener {
+            if (buttonActivate) {
+                binding.favoriteButton.setImageResource(R.drawable.noactivate)
+            } else {
+                binding.favoriteButton.setImageResource(R.drawable.activate)
+            }
+            buttonActivate = !buttonActivate
+        }
+
         return binding.root
 
     }
